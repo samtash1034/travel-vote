@@ -8,7 +8,18 @@ const root = fileURLToPath(new URL('.', import.meta.url));
 const publicDir = join(root, 'public');
 const defaultStorePath = join(root, 'data', 'store.json');
 let storePath = process.env.STORE_PATH || defaultStorePath;
-const port = Number(process.env.PORT || 3000);
+const localPort = 3000;
+const platformPort = 8080;
+
+function resolvePort(raw) {
+  if (raw === undefined || raw.trim() === '') return localPort;
+  const parsed = Number(raw.trim());
+  if (Number.isInteger(parsed) && parsed >= 0 && parsed < 65536) return parsed;
+  console.error(`PORT 的值無法使用：${JSON.stringify(raw)}，改用 ${platformPort}。請確認部署平台的連接埠設定與此一致。`);
+  return platformPort;
+}
+
+const port = resolvePort(process.env.PORT);
 const host = process.env.HOST || '0.0.0.0';
 const emojiChoices = ['✈️', '🏝️', '🏔️', '🏯', '🌊', '🌺', '🧳', '🌏'];
 
