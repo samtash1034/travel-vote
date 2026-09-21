@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d28">
+  <meta name="description" content="五人旅行目的地排名投票">
+  <title>2026 旅行目的地票選</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/custom.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="旅選首頁"><span>旅</span>選</a>
+    <nav aria-label="主要導覽">
+      <a href="#trips">行程比較</a>
+      <a class="nav-cta" href="#vote">開始投票</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> 2026 好友旅行</p>
+        <h1>下一趟旅行，<br><em>一起選。</em></h1>
+        <p class="hero-text">七個目的地、五張選票。一起看完行程亮點與團費，再排出心中的完整名次。</p>
+        <a class="hero-vote-button" href="#vote">開始投票</a>
+      </div>
+      <aside class="deadline-panel">
+        <p>投票截止</p>
+        <time datetime="2026-09-23T00:00:00+08:00">09.23 <small>週三</small></time>
+        <div class="countdown-wrap"><span class="live-dot"></span><strong id="countdown">載入中…</strong></div>
+        <small>台北時間 00:00 自動鎖票</small>
+      </aside>
+    </section>
+
+    <section class="progress-bar">
+      <div class="shell progress-inner">
+        <div><strong id="turnout">0 / 5</strong><span>已完成排名</span></div>
+        <div class="member-list" id="members" aria-label="投票進度"></div>
+        <p>第一名依候選數獲得最高分，依序遞減至 1 分</p>
+      </div>
+    </section>
+
+    <section class="trips-section shell" id="trips">
+      <div class="section-heading">
+        <div><p class="eyebrow">旅行候選</p><h2>七趟旅行，慢慢比較</h2></div>
+        <p>團費為目前旅行社頁面的參考價格，實際金額與供位依出發日期為準。</p>
+      </div>
+      <div class="trip-grid" id="tripCatalog"></div>
+    </section>
+
+    <section class="vote-area" id="vote">
+      <div class="shell">
+        <section class="identity-card" id="loginPanel">
+          <div class="identity-copy"><div><h2>選擇你的名字</h2><p>認領名字後，把最想去的行程排在第一名。</p></div></div>
+          <form id="loginForm" class="login-form">
+            <label class="voter-field"><span>投票人</span><select id="voterSelect" required><option value="">請選擇</option></select></label>
+            <button class="button button-primary" type="submit">進入排名 <span>→</span></button>
+          </form>
+        </section>
+
+        <section class="ranking-section hidden" id="voteSection">
+          <div class="section-heading ranking-heading">
+            <div><p class="eyebrow">我的排名</p><h2><span id="helloName"></span>的旅行排名</h2></div>
+            <button class="quiet-button" id="logoutButton">切換投票人</button>
+          </div>
+          <div class="ranking-tip"><span>↕</span><p>拖曳卡片或使用右側箭頭調整順序。第一名得到 <strong id="topScore">最高分</strong>。</p></div>
+          <div class="ranking" id="ranking"></div>
+          <div class="save-panel"><div><strong>確認這個順序？</strong><p id="saveHint">排名尚未送出</p></div><button class="button button-accent" id="saveVote">送出排名 <span>✓</span></button></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="results-section shell" id="resultsSection">
+      <div class="section-heading">
+        <div><p class="eyebrow">票選結果</p><h2 id="resultsTitle">截止後公布結果</h2></div>
+        <span class="result-status" id="sealed">尚未開票</span>
+      </div>
+      <div id="resultsContent" class="sealed-box"><span>結果暫時保密</span><p>避免即時票數影響大家的選擇，9 月 23 日 00:00 統一開票。</p></div>
+    </section>
+
+    <section class="admin-section shell hidden" id="adminSection">
+      <button class="admin-toggle" id="adminToggle"><span>＋</span> 新增候選行程</button>
+      <form class="admin-form hidden" id="adminForm">
+        <label>國家／地點<input id="newName" maxlength="30" placeholder="例如：北海道" required></label>
+        <label>一句行程特色<input id="newSubtitle" maxlength="100" placeholder="例如：溫泉、雪景、美食 5 日"></label>
+        <label>行程網址<input id="newUrl" type="url" placeholder="https://…"></label>
+        <button class="button button-primary" type="submit">加入票選</button>
+        <p class="form-note">新增後，所有人需要重新確認包含新行程的完整排名。</p>
+      </form>
+    </section>
+  </main>
+
+  <footer><div class="shell"><a class="logo logo-light" href="#top"><span>旅</span>選</a><p>2026 好友旅行票選</p></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

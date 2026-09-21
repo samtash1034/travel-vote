@@ -1,0 +1,171 @@
+{
+  "deadline": "2026-09-22T16:00:00.000Z",
+  "voters": [
+    "奕翔",
+    "玟吟",
+    "奕鈞",
+    "永裕",
+    "小汝"
+  ],
+  "destinations": [
+    {
+      "id": "central-vietnam",
+      "name": "中越",
+      "title": "星宇愛旅行｜峴港巨手橋、會安古鎮、美山聖地 5 日",
+      "subtitle": "世界遺產、古城夜色與巴拿山雲端景觀一次收進行程",
+      "url": "https://tour.settour.com.tw/product/GFG0000023438",
+      "emoji": "🏮",
+      "image": "https://photo.settour.com.tw/900x600/https://www.settour.com.tw/ss_img/info/location/DAD/D0/DAD0000009/DAD0000009_75181.jpg",
+      "agency": "東南旅遊",
+      "days": "5 天 4 夜",
+      "departure": "桃園出發",
+      "price": 34888,
+      "priceNote": "起",
+      "highlights": [
+        "巴拿山巨手黃金橋",
+        "會安古鎮夜遊",
+        "世界遺產美山聖地",
+        "迦南島傳統桶船"
+      ],
+      "createdAt": "2026-09-20T00:00:00.000Z"
+    },
+    {
+      "id": "northern-vietnam",
+      "name": "北越",
+      "title": "星宇北越｜五星雅典娜號、下龍灣與雙層纜車 5 日",
+      "subtitle": "住一晚下龍灣精品遊輪，走進海上桂林與河內老城",
+      "url": "https://tour.settour.com.tw/product/GFG0000030136",
+      "emoji": "⛰️",
+      "image": "https://photo.settour.com.tw/900x600/https%3A%2F%2Fwww.settour.com.tw%2Fss_img%2FGFG%2F0000%2F0229%2F20%2Fori_48430144.jpg",
+      "agency": "東南旅遊",
+      "days": "5 天 4 夜",
+      "departure": "桃園出發",
+      "price": 38888,
+      "priceNote": "起",
+      "highlights": [
+        "雅典娜號船宿一晚",
+        "世界遺產下龍灣",
+        "皇后雙層纜車",
+        "米其林必比登美食"
+      ],
+      "createdAt": "2026-09-20T00:00:01.000Z"
+    },
+    {
+      "id": "bali",
+      "name": "峇里島",
+      "title": "峇里嚮豔｜五星酒店、海神廟、ATLAS CLUB 5 日",
+      "subtitle": "Villa 度假、海灘俱樂部與 120 分鐘 SPA 的放鬆路線",
+      "url": "https://tour.settour.com.tw/product/GFG0000013468",
+      "emoji": "🌴",
+      "image": "https://photo.settour.com.tw/900x600/https%3A%2F%2Fwww.settour.com.tw%2Fss_img%2FGFG%2F0000%2F0134%2F68%2Fori_77496321.jpg",
+      "agency": "東南旅遊",
+      "days": "5 天 4 夜",
+      "departure": "桃園出發",
+      "price": 51500,
+      "priceNote": "起",
+      "highlights": [
+        "五星萬麗酒店兩晚",
+        "獨棟泳池 Villa 兩晚",
+        "ATLAS BEACH CLUB",
+        "精油按摩 120 分鐘"
+      ],
+      "createdAt": "2026-09-20T00:00:02.000Z"
+    },
+    {
+      "id": "kyushu-autumn",
+      "name": "日本九州賞楓",
+      "title": "紅葉賞｜九州鐵道賞楓 5 日",
+      "subtitle": "楓紅峽谷、溫泉湖泊與兩段特色鐵道的秋季限定行程",
+      "url": "https://www.travel4u.com.tw/group/itinerary/FUK05CIKOYO/",
+      "emoji": "🍁",
+      "image": "https://intranet.travel4u.com.tw/eWeb_t4u/IMGDB/002294/002297/002359/00069386.JPG",
+      "agency": "山富旅遊",
+      "days": "5 天 4 夜",
+      "departure": "桃園出發",
+      "price": 39000,
+      "priceNote": "起",
+      "highlights": [
+        "深耶馬溪與金鱗湖賞楓",
+        "高千穗天照鐵道",
+        "南阿蘇懷舊小火車",
+        "熊本城與太宰府"
+      ],
+      "createdAt": "2026-09-20T00:00:03.000Z"
+    },
+    {
+      "id": "jiangnan-china",
+      "name": "中國江南",
+      "title": "江南悠然｜杭州西湖、烏鎮與蘇州 5 日",
+      "subtitle": "走進上蘇杭水鄉，安排國際品牌酒店與沉浸式實景演出",
+      "url": "https://www.travel4u.com.tw/group/product/PVG05261118A/",
+      "emoji": "🏯",
+      "image": "https://intranet.travel4u.com.tw/eWeb_t4u/IMGDB/002294/002306/002309/00069243.JPG",
+      "agency": "山富旅遊",
+      "days": "5 天 4 夜",
+      "departure": "桃園出發",
+      "price": 34500,
+      "priceNote": "11/18 團期",
+      "highlights": [
+        "杭州西湖與京杭大運河",
+        "烏鎮 VIP 搖櫓船",
+        "蘇州滄浪亭與山塘古街",
+        "如夢上塘實景演出"
+      ],
+      "createdAt": "2026-09-20T00:00:04.000Z"
+    },
+    {
+      "id": "australia-gold-coast",
+      "name": "澳洲黃金海岸",
+      "title": "東澳黃金海岸｜農莊、酒莊與在地體驗 7 日",
+      "subtitle": "從海岸城市到自然農莊，安排動物互動、品酒與輕鬆的在地移動體驗",
+      "url": "https://www.travel4u.com.tw/group/product/AUS07261017A/",
+      "emoji": "🐨",
+      "image": "https://intranet.travel4u.com.tw/eWeb_t4u/IMGDB/002294/002327/002329/00065661.JPG",
+      "agency": "山富旅遊",
+      "days": "7 天 6 夜",
+      "departure": "桃園出發",
+      "price": 48900,
+      "priceNote": "10/17 團期",
+      "highlights": ["天堂鄉農莊與無尾熊", "羊駝餵食與牽行體驗", "Q1 大樓 360 度景觀", "酒莊品酒與在地電車"],
+      "createdAt": "2026-09-20T00:00:05.000Z"
+    },
+    {
+      "id": "korea-autumn",
+      "name": "韓國賞楓",
+      "title": "韓國五大賞楓秘境｜釜山、慶州、大邱 5 日",
+      "subtitle": "秋季限定走訪世界遺產古剎、百年銀杏與楓紅溪谷，搭配海雲台遊艇體驗",
+      "url": "https://tour.settour.com.tw/product/GFG0000027733",
+      "emoji": "🍂",
+      "image": "https://photo.settour.com.tw/900x600/https%3A%2F%2Fwww.settour.com.tw%2Fss_img%2FGFG%2F0000%2F0277%2F33%2Fori_78781130.jpg",
+      "agency": "東南旅遊",
+      "days": "5 天 4 夜",
+      "departure": "桃園出發",
+      "price": 24888,
+      "priceNote": "起",
+      "highlights": ["道東書院百年銀杏", "紅流洞溪谷與海印寺", "佛國寺與梵魚寺賞楓", "海雲台遊艇與海岸列車"],
+      "createdAt": "2026-09-20T00:00:06.000Z"
+    }
+  ],
+  "votes": {
+    "奕翔": {
+      "ranking": [
+        "bali",
+        "central-vietnam",
+        "northern-vietnam",
+        "kyushu-autumn",
+        "jiangnan-china"
+      ],
+      "updatedAt": "2026-09-20T10:20:44.337Z"
+    },
+    "玟吟": {
+      "ranking": [
+        "northern-vietnam",
+        "bali",
+        "kyushu-autumn",
+        "central-vietnam",
+        "jiangnan-china"
+      ],
+      "updatedAt": "2026-09-20T11:22:10.901Z"
+    }
+  }
+}

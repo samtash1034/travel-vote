@@ -1,0 +1,21 @@
+/* Final readability and voting emphasis overrides. */
+body { font-size: 18px; }
+.site-header { position: sticky; top: 0; }
+.site-header .nav-cta { background: var(--orange); padding: 14px 22px; font-size: 16px; box-shadow: 0 4px 0 rgba(120, 75, 56, .16); }
+.hero-vote-button { display: inline-flex; align-items: center; justify-content: center; min-width: 190px; margin-top: 24px; padding: 16px 24px; border-radius: 5px; background: var(--orange); color: white; font-size: 18px; font-weight: 800; text-decoration: none; box-shadow: 0 5px 0 rgba(120, 75, 56, .16); }
+.hero-vote-button:hover { transform: translateY(-2px); }
+.hero-text { font-size: 21px; }
+.trip-summary { font-size: 17px; }
+.highlight-list li { font-size: 16px; }
+.rank-copy p { margin: 5px 0 5px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.rank-copy > small { display: block; color: var(--green); font-size: 14px; font-weight: 700; }
+.rank-copy a { margin-top: 9px; padding: 7px 10px; border: 1px solid #aebbb5; border-radius: 4px; text-decoration: none; }
+.rank-copy a:hover { background: var(--green); color: white; }
+@media (max-width: 680px) {
+  body { font-size: 18px; }
+  .hero-text { font-size: 19px; }
+  .hero-vote-button { width: 100%; }
+  .rank-copy p { display: block; font-size: 14px; }
+  .rank-copy > small { font-size: 13px; }
+  .rank-copy a { display: inline-block; font-size: 14px; }
+}
