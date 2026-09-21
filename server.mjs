@@ -1,15 +1,21 @@
 import http from 'node:http';
-import { readFileSync, writeFileSync, renameSync, existsSync } from 'node:fs';
-import { extname, join, normalize } from 'node:path';
+import { readFileSync, writeFileSync, renameSync, existsSync, mkdirSync, copyFileSync } from 'node:fs';
+import { extname, join, normalize, sep, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { randomBytes } from 'node:crypto';
 
 const root = fileURLToPath(new URL('.', import.meta.url));
 const publicDir = join(root, 'public');
-const storePath = process.env.STORE_PATH || join(root, 'data', 'store.json');
+const defaultStorePath = join(root, 'data', 'store.json');
+const storePath = process.env.STORE_PATH || defaultStorePath;
 const port = Number(process.env.PORT || 3000);
 const host = process.env.HOST || '0.0.0.0';
 const emojiChoices = ['✈️', '🏝️', '🏔️', '🏯', '🌊', '🌺', '🧳', '🌏'];
+
+if (!existsSync(storePath)) {
+  mkdirSync(dirname(storePath), { recursive: true });
+  copyFileSync(defaultStorePath, storePath);
+}
 
 const mime = {
   '.html': 'text/html; charset=utf-8',
@@ -156,7 +162,7 @@ async function api(req, res, url) {
 function serveStatic(res, pathname) {
   const requested = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
   const filePath = normalize(join(publicDir, requested));
-  if (!filePath.startsWith(`${publicDir}/`) && filePath !== join(publicDir, 'index.html')) {
+  if (!filePath.startsWith(`${publicDir}${sep}`) && filePath !== join(publicDir, 'index.html')) {
     res.writeHead(403); return res.end('Forbidden');
   }
   if (!existsSync(filePath)) { res.writeHead(404); return res.end('Not found'); }
