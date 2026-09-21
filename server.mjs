@@ -7,14 +7,28 @@ import { randomBytes } from 'node:crypto';
 const root = fileURLToPath(new URL('.', import.meta.url));
 const publicDir = join(root, 'public');
 const defaultStorePath = join(root, 'data', 'store.json');
-const storePath = process.env.STORE_PATH || defaultStorePath;
+let storePath = process.env.STORE_PATH || defaultStorePath;
 const port = Number(process.env.PORT || 3000);
 const host = process.env.HOST || '0.0.0.0';
 const emojiChoices = ['✈️', '🏝️', '🏔️', '🏯', '🌊', '🌺', '🧳', '🌏'];
 
-if (!existsSync(storePath)) {
-  mkdirSync(dirname(storePath), { recursive: true });
-  copyFileSync(defaultStorePath, storePath);
+function prepareStore(target) {
+  try {
+    if (!existsSync(target)) {
+      mkdirSync(dirname(target), { recursive: true });
+      copyFileSync(defaultStorePath, target);
+    }
+    return true;
+  } catch (error) {
+    console.error(`無法使用資料檔 ${target}：${error.message}`);
+    return false;
+  }
+}
+
+if (!prepareStore(storePath) && storePath !== defaultStorePath) {
+  console.error(`改用 ${defaultStorePath}。請確認持久磁碟已掛載到 STORE_PATH 所在目錄，否則重新部署後票數會歸零。`);
+  storePath = defaultStorePath;
+  prepareStore(storePath);
 }
 
 const mime = {
