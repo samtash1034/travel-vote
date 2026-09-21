@@ -31,9 +31,9 @@
       </div>
       <aside class="deadline-panel">
         <p>投票截止</p>
-        <time datetime="2026-09-23T00:00:00+08:00">09.23 <small>週三</small></time>
+        <time datetime="2026-09-23T19:00:00+08:00">09.23 <small>週三</small></time>
         <div class="countdown-wrap"><span class="live-dot"></span><strong id="countdown">載入中…</strong></div>
-        <small>台北時間 00:00 自動鎖票</small>
+        <small>台北時間 19:00 自動鎖票</small>
       </aside>
     </section>
 
@@ -68,9 +68,9 @@
             <div><p class="eyebrow">我的排名</p><h2><span id="helloName"></span>的旅行排名</h2></div>
             <button class="quiet-button" id="logoutButton">切換投票人</button>
           </div>
-          <div class="ranking-tip"><span>↕</span><p>拖曳卡片或使用右側箭頭調整順序。第一名得到 <strong id="topScore">最高分</strong>。</p></div>
+          <div class="ranking-tip"><span class="tip-grip"><i></i></span><p>按住卡片左側的握把拖曳，或用 ↑ ↓ 微調順序。第一名得到 <strong id="topScore">最高分</strong>。</p></div>
           <div class="ranking" id="ranking"></div>
-          <div class="save-panel"><div><strong>確認這個順序？</strong><p id="saveHint">排名尚未送出</p></div><button class="button button-accent" id="saveVote">送出排名 <span>✓</span></button></div>
+          <div class="save-panel" id="savePanel"><div><strong>確認這個順序？</strong><p id="saveHint">排名尚未送出</p></div><button class="button button-accent" id="saveVote">送出排名 <span>✓</span></button></div>
         </section>
       </div>
     </section>
@@ -80,7 +80,7 @@
         <div><p class="eyebrow">票選結果</p><h2 id="resultsTitle">截止後公布結果</h2></div>
         <span class="result-status" id="sealed">尚未開票</span>
       </div>
-      <div id="resultsContent" class="sealed-box"><span>結果暫時保密</span><p>避免即時票數影響大家的選擇，9 月 23 日 00:00 統一開票。</p></div>
+      <div id="resultsContent" class="sealed-box"><span>結果暫時保密</span><p>避免即時票數影響大家的選擇，9 月 23 日 19:00 統一開票。</p></div>
     </section>
 
     <section class="admin-section shell hidden" id="adminSection">
