@@ -62,7 +62,7 @@ function saveStore(store) {
 }
 
 function isClosed(store) {
-  return Date.now() >= new Date(store.deadline).getTime();
+  return Boolean(store.closedManually) || Date.now() >= new Date(store.deadline).getTime();
 }
 
 function cleanText(value, length = 80) {
@@ -153,6 +153,15 @@ async function api(req, res, url) {
       return sendJson(res, 400, { error: '請為每個地點排出不重複的名次' });
     }
     store.votes[voter] = { ranking, updatedAt: new Date().toISOString() };
+    saveStore(store);
+    return sendJson(res, 200, { ok: true, state: publicState(store, voter) });
+  }
+
+  if (req.method === 'POST' && url.pathname === '/api/close') {
+    const voter = cleanText(body.voter, 20);
+    if (!authenticate(store, voter)) return sendJson(res, 401, { error: '投票人身分不正確' });
+    if (isClosed(store)) return sendJson(res, 403, { error: '投票已經截止' });
+    store.closedManually = true;
     saveStore(store);
     return sendJson(res, 200, { ok: true, state: publicState(store, voter) });
   }

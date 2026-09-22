@@ -5,6 +5,7 @@ const els = {
   helloName: $('#helloName'), topScore: $('#topScore'), ranking: $('#ranking'), saveVote: $('#saveVote'), saveHint: $('#saveHint'),
   savePanel: $('#savePanel'), logoutButton: $('#logoutButton'), resultsTitle: $('#resultsTitle'), resultsContent: $('#resultsContent'),
   sealed: $('#sealed'), adminSection: $('#adminSection'), adminToggle: $('#adminToggle'), adminForm: $('#adminForm'), toast: $('#toast'),
+  closePanel: $('#closePanel'), adminClose: $('#adminClose'),
   navCta: $('.site-header .nav-cta'), heroVote: $('.hero-vote-button')
 };
 
@@ -49,6 +50,7 @@ function render() {
   els.loginPanel.classList.toggle('hidden', signedIn);
   els.voteSection.classList.toggle('hidden', !signedIn);
   els.adminSection.classList.toggle('hidden', currentVoter !== '奕翔' || state.closed);
+  els.closePanel.classList.toggle('hidden', !signedIn || state.closed);
   if (els.navCta) els.navCta.textContent = signedIn ? '我的排名' : '開始投票';
   if (els.heroVote) els.heroVote.textContent = signedIn ? '回到我的排名' : '開始投票';
   if (signedIn) {
@@ -400,6 +402,14 @@ els.adminForm.addEventListener('submit', async (event) => {
     const body = { voter: currentVoter, name: $('#newName').value, subtitle: $('#newSubtitle').value, url: $('#newUrl').value };
     const data = await request('/api/destinations', { method: 'POST', body: JSON.stringify(body) });
     state = data.state; els.adminForm.reset(); els.adminForm.classList.add('hidden'); render(); toast('新行程已加入票選');
+  } catch (error) { toast(error.message); }
+});
+
+els.adminClose.addEventListener('click', async () => {
+  if (!window.confirm('確定要立即鎖票並公布結果嗎？這個動作無法復原。')) return;
+  try {
+    const data = await request('/api/close', { method: 'POST', body: JSON.stringify({ voter: currentVoter }) });
+    state = data.state; render(); toast('已手動開票');
   } catch (error) { toast(error.message); }
 });
 
